@@ -9,11 +9,11 @@ for i in range(n):
 
 direction = {'u':(-1,0),'d':(1,0),'l':(0,-1),'r':(0,1)}
 
-# bfs
+# bfs 함수
 def bfs(graph, x, y):
 	q = deque()
 	q.append((x, y))        # 시작 위치 큐에 삽입
-	graph[x][y] = 1         # 괴물 위치로 바꿔 방문 처리
+	graph[x][y] = 1         # 방문 처리
 	while q:                # 큐가 빌 때까지
 		x, y = q.popleft()    # 큐에서 현재 위치 빼기
 		for d in direction:         # 상, 하, 좌, 우 확인
