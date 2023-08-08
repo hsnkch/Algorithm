@@ -50,10 +50,16 @@ def solution(genres, plays):
     
     # 장르별 총 재생 횟수를 내림차순으로 정렬
     sorted_genre_play = sorted(genre_play.items(), key=lambda x: x[1], reverse=True)
+    print(sorted_genre_play)
+    print(song_play)
     
     # 장르별로 가장 많이 재생된 곡을 두 개씩 선택
     for genre, _ in sorted_genre_play:
-        genre_songs = [song for song, (play, g) in song_play.items() if g == genre]
+        # genre_songs = [song for song, (play, g) in song_play.items() if g == genre]
+        genre_songs = []
+        for song, (play, g) in song_play.items():
+            if g == genre:
+                genre_songs.append(song)
         genre_songs = sorted(genre_songs, key=lambda x: (song_play[x][0], -x), reverse=True)
         answer.extend(genre_songs[:2])
     
