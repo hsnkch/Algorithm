@@ -9,8 +9,10 @@ def solution(s):
         s = bin(len(s))[2:]
         
         cnt += 1
+        
 
     return [cnt, zero_count]
+
 
 
 
